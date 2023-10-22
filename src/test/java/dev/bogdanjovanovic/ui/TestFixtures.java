@@ -1,4 +1,4 @@
-package dev.bogdanjovanovic.common;
+package dev.bogdanjovanovic.ui;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -6,7 +6,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import dev.bogdanjovanovic.common.PomContainer;
+import dev.bogdanjovanovic.ui.poms.PomContainer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,9 +16,9 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 @TestInstance(Lifecycle.PER_CLASS)
 public class TestFixtures {
 
-  private Browser browser;
-  private BrowserContext context;
-  protected PomContainer pomContainer;
+  Browser browser;
+  BrowserContext context;
+  PomContainer pomContainer;
 
   @BeforeAll
   void launchBrowser() {

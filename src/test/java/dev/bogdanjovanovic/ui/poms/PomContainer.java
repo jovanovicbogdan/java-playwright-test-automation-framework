@@ -1,8 +1,6 @@
-package dev.bogdanjovanovic.common;
+package dev.bogdanjovanovic.ui.poms;
 
 import com.microsoft.playwright.Page;
-import dev.bogdanjovanovic.poms.TodoMVCPage;
-import dev.bogdanjovanovic.poms.WebFormPage;
 
 public class PomContainer {
   private final TodoMVCPage todoMVCPage;

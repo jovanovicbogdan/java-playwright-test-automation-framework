@@ -1,4 +1,5 @@
 plugins {
+    id("application")
     id("java")
 }
 
@@ -14,6 +15,10 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 
     implementation("com.microsoft.playwright:playwright:1.38.0")
+}
+
+application {
+    mainClass.set("dev.bogdanjovanovic.Application")
 }
 
 // Usage: ./gradlew playwright --args="help"

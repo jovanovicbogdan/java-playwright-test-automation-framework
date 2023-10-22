@@ -1,15 +1,13 @@
-package dev.bogdanjovanovic.e2e;
+package dev.bogdanjovanovic.ui;
 
-import dev.bogdanjovanovic.common.TestFixtures;
-import dev.bogdanjovanovic.poms.TodoMVCPage;
+import dev.bogdanjovanovic.ui.poms.TodoMVCPage;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-public class TodoMVCTest extends TestFixtures {
+public class TodoMVCE2ETest extends TestFixtures {
 
   @Test
-  @Tags({@Tag("todomvc"), @Tag("smoke")})
+  @Tag("smoke")
   void shouldAddNewTodo() {
     final TodoMVCPage page = pomContainer.getTodoMVCPage();
     page.navigateToTodoMVCPage();
