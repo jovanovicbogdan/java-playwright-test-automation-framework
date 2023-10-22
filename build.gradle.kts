@@ -23,6 +23,9 @@ tasks.register<JavaExec>("playwright") {
 }
 
 tasks.test {
+    val browser = System.getProperty("browser") ?: "chromium"
+    systemProperty("browser", browser)
+
     useJUnitPlatform() {
         val includeTags = System.getProperty("includeTags")
         val excludeTags = System.getProperty("excludeTags")
