@@ -1,5 +1,6 @@
-package dev.bogdanjovanovic.ui;
+package dev.bogdanjovanovic.ui.e2e;
 
+import dev.bogdanjovanovic.ui.common.TestFixtures;
 import dev.bogdanjovanovic.ui.poms.WebFormPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

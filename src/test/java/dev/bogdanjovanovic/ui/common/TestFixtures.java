@@ -1,6 +1,7 @@
-package dev.bogdanjovanovic.ui;
+package dev.bogdanjovanovic.ui.common;
 
 import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
@@ -18,7 +19,7 @@ public class TestFixtures {
 
   Browser browser;
   BrowserContext context;
-  PomContainer pomContainer;
+  protected PomContainer pomContainer;
 
   @BeforeAll
   void launchBrowser() {
@@ -28,7 +29,9 @@ public class TestFixtures {
 
   @BeforeEach
   void createContextAndPage() {
-    context = browser.newContext();
+    context = browser.newContext(
+        new NewContextOptions().setViewportSize(1920, 1080)
+);
 //    context.tracing().start(new Tracing.StartOptions()
 //        .setScreenshots(true)
 //        .setSnapshots(true)
