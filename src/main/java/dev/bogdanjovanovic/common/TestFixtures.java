@@ -9,8 +9,9 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import dev.bogdanjovanovic.poms.SwagLabsPage;
 import dev.bogdanjovanovic.poms.TodoMVCPage;
-import dev.bogdanjovanovic.poms.UpworkLoginPage;
 import dev.bogdanjovanovic.poms.WebFormPage;
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureLifecycle;
 import java.nio.file.Paths;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -30,7 +31,6 @@ public class TestFixtures implements TestWatcher {
 
   protected SwagLabsPage swagLabsPage;
   protected TodoMVCPage todoMVCPage;
-  protected UpworkLoginPage upworkLoginPage;
   protected WebFormPage webFormPage;
 
   public static Playwright getPlaywright() {
@@ -65,7 +65,6 @@ public class TestFixtures implements TestWatcher {
 
     swagLabsPage = new SwagLabsPage(getPage());
     todoMVCPage = new TodoMVCPage(getPage());
-    upworkLoginPage = new UpworkLoginPage(getPage());
     webFormPage = new WebFormPage(getPage());
   }
 
@@ -73,7 +72,10 @@ public class TestFixtures implements TestWatcher {
   public void testFailed(final ExtensionContext context, final Throwable cause) {
     final String path =
         System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
-    takeScreenshot(path);
+    final byte[] screenshot = takeScreenshot(path);
+//    AllureLifecycle.addAttachment("Screenshot", "image/png", "png", screenshot);
+    final AllureLifecycle allureLifecycle = Allure.getLifecycle();
+    allureLifecycle.addAttachment("Screenshot", "image/png", "png", screenshot);
   }
 
   @AfterAll
@@ -92,8 +94,8 @@ public class TestFixtures implements TestWatcher {
     };
   }
 
-  private void takeScreenshot(final String path) {
-    getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)));
+  private byte[] takeScreenshot(final String path) {
+    return getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)));
   }
 
 }

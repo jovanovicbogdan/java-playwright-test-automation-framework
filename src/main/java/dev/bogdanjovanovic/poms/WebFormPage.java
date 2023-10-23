@@ -2,6 +2,7 @@ package dev.bogdanjovanovic.poms;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import dev.bogdanjovanovic.contants.AppURLs;
 
 public class WebFormPage {
   private final Page page;
@@ -13,7 +14,7 @@ public class WebFormPage {
   }
 
   public void navigateToWebFormPage() {
-    page.navigate("https://www.selenium.dev/selenium/web/web-form.html");
+    page.navigate(AppURLs.WEB_FORM_PAGE);
   }
 
   public void fillTextInput(final String text) {

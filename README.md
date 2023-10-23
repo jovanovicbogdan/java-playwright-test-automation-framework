@@ -10,4 +10,4 @@
 
 ## TODO
 
-- [ ] Attach screenshots to allure report
+- [x] ~~Attach screenshots to allure report~~
