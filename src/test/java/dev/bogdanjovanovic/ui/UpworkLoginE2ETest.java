@@ -1,7 +1,7 @@
-package dev.bogdanjovanovic.ui.e2e;
+package dev.bogdanjovanovic.ui;
 
-import dev.bogdanjovanovic.ui.common.TestFixtures;
-import dev.bogdanjovanovic.ui.poms.UpworkLoginPage;
+import dev.bogdanjovanovic.common.TestFixtures;
+import dev.bogdanjovanovic.poms.UpworkLoginPage;
 import org.junit.jupiter.api.Test;
 
 public class UpworkLoginE2ETest extends TestFixtures {

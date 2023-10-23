@@ -1,4 +1,4 @@
-package dev.bogdanjovanovic.ui.common;
+package dev.bogdanjovanovic.common;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Browser.NewContextOptions;
@@ -7,7 +7,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import dev.bogdanjovanovic.ui.poms.PomContainer;
+import dev.bogdanjovanovic.poms.PomContainer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

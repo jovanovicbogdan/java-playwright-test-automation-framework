@@ -1,4 +1,4 @@
-package dev.bogdanjovanovic.ui.poms;
+package dev.bogdanjovanovic.poms;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;

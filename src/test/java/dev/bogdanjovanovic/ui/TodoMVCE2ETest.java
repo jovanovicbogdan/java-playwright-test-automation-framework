@@ -1,7 +1,7 @@
-package dev.bogdanjovanovic.ui.e2e;
+package dev.bogdanjovanovic.ui;
 
-import dev.bogdanjovanovic.ui.common.TestFixtures;
-import dev.bogdanjovanovic.ui.poms.TodoMVCPage;
+import dev.bogdanjovanovic.common.TestFixtures;
+import dev.bogdanjovanovic.poms.TodoMVCPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
