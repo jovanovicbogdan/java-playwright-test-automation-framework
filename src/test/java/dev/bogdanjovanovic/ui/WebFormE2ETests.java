@@ -5,14 +5,13 @@ import dev.bogdanjovanovic.poms.WebFormPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class WebFormE2ETest extends TestFixtures {
+public class WebFormE2ETests extends TestFixtures {
 
   @Test
   @Tag("smoke")
   void testWebFormTextInput() {
-    final WebFormPage page = pomContainer.getWebFormPage();
-    page.navigateToWebFormPage();
-    page.fillTextInput("Hello World!");
+    webFormPage.navigateToWebFormPage();
+    webFormPage.fillTextInput("Hello World!");
   }
 
 }

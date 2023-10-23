@@ -2,6 +2,7 @@ package dev.bogdanjovanovic.poms;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import dev.bogdanjovanovic.contants.AppURLs;
 
 public class UpworkLoginPage {
   private final Page page;
@@ -21,7 +22,7 @@ public class UpworkLoginPage {
   }
 
   public void navigateToUpworkHomepage() {
-    page.navigate("https://stage.upwork.com/");
+    page.navigate(AppURLs.UPWORK_STAGE);
   }
 
   public void clickOnLoginLink() {

@@ -1,6 +1,7 @@
 plugins {
     id("application")
     id("java")
+    id("io.qameta.allure") version "2.11.2"
 }
 
 group = "dev.bogdanjovanovic"
@@ -13,6 +14,7 @@ repositories {
 dependencies {
     implementation(platform("org.junit:junit-bom:5.9.1"))
     implementation("org.junit.jupiter:junit-jupiter")
+    implementation("org.junit.platform:junit-platform-launcher:1.10.0")
 
     implementation("com.microsoft.playwright:playwright:1.38.0")
 }

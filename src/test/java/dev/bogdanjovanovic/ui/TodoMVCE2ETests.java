@@ -5,15 +5,14 @@ import dev.bogdanjovanovic.poms.TodoMVCPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class TodoMVCE2ETest extends TestFixtures {
+public class TodoMVCE2ETests extends TestFixtures {
 
   @Test
   @Tag("smoke")
   void shouldAddNewTodo() {
-    final TodoMVCPage page = pomContainer.getTodoMVCPage();
-    page.navigateToTodoMVCPage();
-    page.fillTodoInput("new todo");
-    page.pressEnter();
+    todoMVCPage.navigateToTodoMVCPage();
+    todoMVCPage.fillTodoInput("new todo");
+    todoMVCPage.pressEnter();
   }
 
 }

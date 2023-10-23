@@ -7,48 +7,82 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.BrowserType.LaunchOptions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import dev.bogdanjovanovic.poms.PomContainer;
-import org.junit.jupiter.api.AfterEach;
+import dev.bogdanjovanovic.poms.SwagLabsPage;
+import dev.bogdanjovanovic.poms.TodoMVCPage;
+import dev.bogdanjovanovic.poms.UpworkLoginPage;
+import dev.bogdanjovanovic.poms.WebFormPage;
+import java.nio.file.Paths;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class TestFixtures {
+public class TestFixtures implements TestWatcher {
 
-  Browser browser;
-  BrowserContext context;
-  protected PomContainer pomContainer;
+  private static final ThreadLocal<Playwright> playwrightThreadLocal = new ThreadLocal<>();
+  private static final ThreadLocal<Browser> browserThreadLocal = new ThreadLocal<>();
+  private static final ThreadLocal<BrowserContext> browserContextThreadLocal = new ThreadLocal<>();
+  private static final ThreadLocal<Page> pageThreadLocal = new ThreadLocal<>();
+
+  protected SwagLabsPage swagLabsPage;
+  protected TodoMVCPage todoMVCPage;
+  protected UpworkLoginPage upworkLoginPage;
+  protected WebFormPage webFormPage;
+
+  public static Playwright getPlaywright() {
+    return playwrightThreadLocal.get();
+  }
+
+  public static Browser getBrowser() {
+    return browserThreadLocal.get();
+  }
+
+  public static BrowserContext getBrowserContext() {
+    return browserContextThreadLocal.get();
+  }
+
+  public static Page getPage() {
+    return pageThreadLocal.get();
+  }
 
   @BeforeAll
   void launchBrowser() {
-    final Playwright playwright = Playwright.create();
-    browser = getBrowserType(playwright).launch(new LaunchOptions().setHeadless(false));
+    playwrightThreadLocal.set(Playwright.create());
+    browserThreadLocal.set(
+        getBrowserType(getPlaywright()).launch(new LaunchOptions().setHeadless(false)));
   }
 
   @BeforeEach
   void createContextAndPage() {
-    context = browser.newContext(
-        new NewContextOptions().setViewportSize(1920, 1080)
-);
-//    context.tracing().start(new Tracing.StartOptions()
-//        .setScreenshots(true)
-//        .setSnapshots(true)
-//        .setSources(true));
-    final Page page = context.newPage();
-    pomContainer = new PomContainer(page);
+    browserContextThreadLocal.set(getBrowser().newContext(
+        new NewContextOptions().setViewportSize(1280, 1024)
+    ));
+    pageThreadLocal.set(getBrowserContext().newPage());
+
+    swagLabsPage = new SwagLabsPage(getPage());
+    todoMVCPage = new TodoMVCPage(getPage());
+    upworkLoginPage = new UpworkLoginPage(getPage());
+    webFormPage = new WebFormPage(getPage());
   }
 
-  @AfterEach
+  @Override
+  public void testFailed(final ExtensionContext context, final Throwable cause) {
+    final String path =
+        System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
+    takeScreenshot(path);
+  }
+
+  @AfterAll
   void closeContext() {
-//    context.tracing().stop(new Tracing.StopOptions()
-//        .setPath(Paths.get("trace.zip")));
-    context.close();
+    getBrowserContext().close();
   }
 
   private BrowserType getBrowserType(final Playwright playwright) {
-    final String browserName = System.getProperty("browser", "chromium");
+    final String browserName = System.getProperty("browser", "chromium").trim();
 
     return switch (browserName) {
       case "chromium" -> playwright.chromium();
@@ -56,6 +90,10 @@ public class TestFixtures {
       case "webkit" -> playwright.webkit();
       default -> throw new IllegalArgumentException("Unknown browser: " + browserName);
     };
+  }
+
+  private void takeScreenshot(final String path) {
+    getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)));
   }
 
 }

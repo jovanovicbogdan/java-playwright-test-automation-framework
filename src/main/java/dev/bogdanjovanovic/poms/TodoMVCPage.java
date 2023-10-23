@@ -2,6 +2,7 @@ package dev.bogdanjovanovic.poms;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import dev.bogdanjovanovic.contants.AppURLs;
 
 public class TodoMVCPage {
   private final Page page;
@@ -13,7 +14,7 @@ public class TodoMVCPage {
   }
 
   public void navigateToTodoMVCPage() {
-    page.navigate("https://demo.playwright.dev/todomvc/");
+    page.navigate(AppURLs.TODO_MVC_HOME_PAGE);
   }
 
   public void fillTodoInput(final String content) {
