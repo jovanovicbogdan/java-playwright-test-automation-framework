@@ -11,3 +11,4 @@
 ## TODO
 
 - [x] ~~Attach screenshots to allure report~~
+- [ ] Add API tests support
