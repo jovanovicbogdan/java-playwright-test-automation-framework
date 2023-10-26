@@ -12,3 +12,4 @@
 
 - [x] ~~Attach screenshots to allure report~~
 - [ ] Add API tests support
+- [ ] Add OpenAI integration
