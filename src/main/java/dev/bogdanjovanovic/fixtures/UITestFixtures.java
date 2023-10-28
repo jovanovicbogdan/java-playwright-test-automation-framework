@@ -1,4 +1,4 @@
-package dev.bogdanjovanovic.common;
+package dev.bogdanjovanovic.fixtures;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Browser.NewContextOptions;
@@ -22,7 +22,7 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class TestFixtures implements TestWatcher {
+public class UITestFixtures implements TestWatcher {
 
   private static final ThreadLocal<Playwright> playwrightThreadLocal = new ThreadLocal<>();
   private static final ThreadLocal<Browser> browserThreadLocal = new ThreadLocal<>();

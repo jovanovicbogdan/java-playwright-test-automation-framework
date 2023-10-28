@@ -1,7 +1,6 @@
 package dev.bogdanjovanovic.ui;
 
-import dev.bogdanjovanovic.common.TestFixtures;
-import dev.bogdanjovanovic.poms.SwagLabsPage;
+import dev.bogdanjovanovic.fixtures.UITestFixtures;
 import io.qameta.allure.Description;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Link;
@@ -14,7 +13,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-public class SwagLabsE2ETests extends TestFixtures {
+public class SwagLabsE2ETests extends UITestFixtures {
 
   @Test
   @Tags({@Tag("smoke"), @Tag("swaglabs")})
