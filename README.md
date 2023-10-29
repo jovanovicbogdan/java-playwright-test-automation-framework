@@ -12,8 +12,23 @@
 ./gradlew clean test -DincludeTags=TAG_1,TAG_2 -Dbrowser=BROWSER_NAME -Dheadless=false
 ```
 
-## TODO
+### JUnit5 Configuration
+
+- The following configuration is currenty set in the `src/test/resources/junit-platform.properties` file:
+
+```
+junit.jupiter.execution.parallel.enabled=true
+junit.jupiter.execution.parallel.mode.default=same_thread
+junit.jupiter.execution.parallel.mode.classes.default=concurrent
+junit.jupiter.execution.parallel.config.strategy=dynamic
+junit.jupiter.execution.parallel.config.dynamic.factor=0.5
+```
+
+- The above configuration will run the tests in parallel using the same thread with max number of thread equal to 1/2 of the number of CPU cores, and will run the tests in the same class concurrently.
+- Feel free to change the configuration to your needs.
+
+#### TODO
 
 - [x] ~~Attach screenshots to allure report~~
-- [ ] Add API tests support
-- [ ] Add OpenAI API integration
+- [x] ~~Add API tests support~~
+- [ ] Add OpenAI API integration - TBD

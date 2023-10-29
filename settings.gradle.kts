@@ -1,2 +1,2 @@
-rootProject.name = "pw-practice"
+rootProject.name = "java-playwright-test-automation-framework"
 
