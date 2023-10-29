@@ -17,6 +17,7 @@ dependencies {
     implementation("org.junit.platform:junit-platform-launcher:1.10.0")
 
     implementation("com.microsoft.playwright:playwright:1.38.0")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 application {

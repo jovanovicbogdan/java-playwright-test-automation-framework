@@ -15,7 +15,7 @@ import java.util.Map;
 public class APITestFixtures {
 
   private Playwright playwright;
-  private APIRequestContext request;
+  protected APIRequestContext request;
 
   void createPlaywright() {
     playwright = Playwright.create();
@@ -26,7 +26,7 @@ public class APITestFixtures {
     headers.put("Accept", "application/json");
 
     request = playwright.request().newContext(new APIRequest.NewContextOptions()
-        .setBaseURL("https://petstore.swagger.io/v2")
+        .setBaseURL("https://petstore.swagger.io")
         .setExtraHTTPHeaders(headers));
   }
 
