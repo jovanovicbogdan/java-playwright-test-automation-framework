@@ -51,9 +51,10 @@ public class UITestFixtures implements TestWatcher {
 
   @BeforeAll
   void launchBrowser() {
+    final boolean headless = Boolean.valueOf(System.getProperty("headless", "true").trim());
     playwrightThreadLocal.set(Playwright.create());
     browserThreadLocal.set(
-        getBrowserType(getPlaywright()).launch(new LaunchOptions().setHeadless(false)));
+        getBrowserType(getPlaywright()).launch(new LaunchOptions().setHeadless(headless)));
   }
 
   @BeforeEach

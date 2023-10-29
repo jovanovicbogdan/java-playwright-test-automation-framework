@@ -34,6 +34,9 @@ tasks.test {
     val browser = System.getProperty("browser") ?: "chromium"
     systemProperty("browser", browser)
 
+    val headless = System.getProperty("headless") ?: "true"
+    systemProperty("headless", headless)
+
     useJUnitPlatform() {
         val includeTags = System.getProperty("includeTags")
         val excludeTags = System.getProperty("excludeTags")

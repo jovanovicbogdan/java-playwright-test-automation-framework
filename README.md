@@ -5,7 +5,7 @@
 ## How to run
 
 ```bash
-./gradlew clean test -DincludeTags=TAG_1,TAG_2 -Dbrowser=BROWSER_NAME
+./gradlew clean test -DincludeTags=TAG_1,TAG_2 -Dbrowser=BROWSER_NAME -Dheadless=false
 ```
 
 ## TODO
