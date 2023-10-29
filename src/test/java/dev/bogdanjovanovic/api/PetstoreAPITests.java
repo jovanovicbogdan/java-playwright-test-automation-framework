@@ -11,11 +11,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class PetstoreAPITests extends APITestFixtures {
 
   @Test
+  @Tag("api")
   void shouldAddNewPetToTheStore() {
     final Map<String, Object> data = new HashMap<>();
     data.put("id", 1);
@@ -43,6 +45,7 @@ public class PetstoreAPITests extends APITestFixtures {
   }
 
   @Test
+  @Tag("api")
   void shouldGetPetById() {
     final APIResponse petResponse = request.get("/v2/pet/" + 1);
     assertTrue(petResponse.ok());
