@@ -4,6 +4,8 @@
 
 ## How to run
 
+- GitHub Action workflow configured to run tests on push or pull request on branch master.
+
 ```bash
 ./gradlew clean test -DincludeTags=TAG_1,TAG_2 -Dbrowser=BROWSER_NAME -Dheadless=false
 ```
