@@ -1,5 +1,4 @@
 # Tests will run on push or pull request on branches main/master.
-# The workflow will install all dependencies, install Playwright and then run the tests.
 
 name: Playwright Tests
 on:
