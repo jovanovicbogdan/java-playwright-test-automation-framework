@@ -44,15 +44,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build and Test
-        run: ./gradlew build -DincludeTags=smoke
-
-      - name: Generate Allure Report
-        run: ./gradlew allureReport
-
-      - name: Deploy to GitHub Pages
+      - name: Build and Test, Generate Allure Report & Deploy to GitHub Pages
         run: |
           git checkout -b gh-pages
+          ./gradlew build -DincludeTags=smoke
+          ./gradlew allureReport
           git rm -rf .
           cp -r allureReport/* .
           mv allureReport docs
