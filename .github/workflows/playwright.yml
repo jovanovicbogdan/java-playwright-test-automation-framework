@@ -56,4 +56,4 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "jbogdan1998@hotmail.com"
           git commit -m "Add Allure report files"
-          git push https://${{ secrets.GH_PAT }}@github.com/jovanovicbogdan/java-playwright-test-automation-framework gh-pages
+          git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }} gh-pages
