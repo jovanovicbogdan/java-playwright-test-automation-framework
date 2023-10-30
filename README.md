@@ -31,4 +31,5 @@ junit.jupiter.execution.parallel.config.dynamic.factor=0.5
 
 - [x] ~~Attach screenshots to allure report~~
 - [x] ~~Add API tests support~~
+- [ ] Publish allure report to GitHub pages
 - [ ] Add OpenAI API integration - TBD
