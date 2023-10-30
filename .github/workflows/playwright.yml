@@ -52,7 +52,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git checkout gh-pages
+          git checkout -b gh-pages
           git rm -rf .
           cp -r allureReport/* .
           mv allureReport docs
