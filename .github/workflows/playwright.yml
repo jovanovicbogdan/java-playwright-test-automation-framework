@@ -50,7 +50,7 @@ jobs:
           ./gradlew build -DincludeTags=smoke
           ./gradlew allureReport
           git rm -rf .
-          cp -r allureReport/* .
+          cp -r build/reports/allure-report/* .
           mv allureReport docs
           git add .
           git config user.name "GitHub Actions"
