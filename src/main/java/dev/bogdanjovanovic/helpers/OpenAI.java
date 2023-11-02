@@ -25,7 +25,8 @@ public class OpenAI {
           .build();
 
       final HttpClient client = HttpClient.newHttpClient();
-      final HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+      final HttpResponse<String> response = client.send(request,
+          HttpResponse.BodyHandlers.ofString());
 
       System.out.println(response.body());
       client.send(request, HttpResponse.BodyHandlers.ofString());
