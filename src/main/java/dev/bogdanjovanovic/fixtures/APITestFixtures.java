@@ -3,6 +3,7 @@ package dev.bogdanjovanovic.fixtures;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
 import com.microsoft.playwright.Playwright;
+import dev.bogdanjovanovic.rest.RestClient;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
@@ -16,6 +17,7 @@ public class APITestFixtures {
 
   private Playwright playwright;
   protected APIRequestContext request;
+  protected final RestClient restClient = new RestClient();
 
   void createPlaywright() {
     playwright = Playwright.create();

@@ -8,13 +8,13 @@ public class GoRESTAPITests extends APITestFixtures {
 
   @Test
   void createUser() {
-    final GoREST goREST = new GoREST();
+    final GoREST goREST = new GoREST(restClient);
     goREST.createUser();
   }
 
   @Test
   void getUsers() {
-    final GoREST goREST = new GoREST();
+    final GoREST goREST = new GoREST(restClient);
     goREST.getUsers();
   }
 
