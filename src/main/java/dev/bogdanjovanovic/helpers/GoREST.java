@@ -32,18 +32,4 @@ public class GoREST {
     restClient.sendGetRequest(uri, "Accept", "application/json");
   }
 
-  private String prepareRequest() throws JsonProcessingException {
-    final HashMap<String, Object> values = new HashMap<>() {
-      {
-        put("name", "René Descartes");
-        put("email", "rene@gmail.com");
-        put("gender", "male");
-        put("status", "active");
-      }
-    };
-
-    final ObjectMapper objectMapper = new ObjectMapper();
-    return objectMapper.writeValueAsString(values);
-  }
-
 }
