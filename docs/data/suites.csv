@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Nov 22 23:28:40 UTC 2023","Wed Nov 22 23:28:40 UTC 2023","222","","dev.bogdanjovanovic.api.PetstoreAPITests","","dev.bogdanjovanovic.api.PetstoreAPITests","shouldAddNewPetToTheStore","shouldAddNewPetToTheStore()",""
+"passed","Wed Nov 22 23:28:41 UTC 2023","Wed Nov 22 23:28:42 UTC 2023","307","","dev.bogdanjovanovic.ui.TodoMVCE2ETests","","dev.bogdanjovanovic.ui.TodoMVCE2ETests","shouldAddNewTodo","shouldAddNewTodo()",""
+"passed","Wed Nov 22 23:28:40 UTC 2023","Wed Nov 22 23:28:40 UTC 2023","52","","dev.bogdanjovanovic.api.PetstoreAPITests","","dev.bogdanjovanovic.api.PetstoreAPITests","shouldGetPetById","shouldGetPetById()",""
+"passed","Wed Nov 22 23:28:41 UTC 2023","Wed Nov 22 23:28:42 UTC 2023","526","","dev.bogdanjovanovic.ui.SwagLabsE2ETests","","dev.bogdanjovanovic.ui.SwagLabsE2ETests","testLoginSwagLabs","SwagLabs login test","This test verifies that user can login to SwagLabs"
+"passed","Wed Nov 22 23:28:40 UTC 2023","Wed Nov 22 23:28:41 UTC 2023","407","","dev.bogdanjovanovic.ui.WebFormE2ETests","","dev.bogdanjovanovic.ui.WebFormE2ETests","testWebFormTextInput","testWebFormTextInput()",""
