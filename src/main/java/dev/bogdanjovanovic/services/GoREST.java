@@ -1,8 +1,7 @@
-package dev.bogdanjovanovic.helpers;
+package dev.bogdanjovanovic.services;
 
 import dev.bogdanjovanovic.rest.RestClient;
-import io.qameta.allure.internal.shadowed.jackson.core.JsonProcessingException;
-import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
+
 import java.net.URI;
 import java.util.HashMap;
 

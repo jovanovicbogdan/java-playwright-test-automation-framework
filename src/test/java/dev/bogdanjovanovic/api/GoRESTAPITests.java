@@ -1,7 +1,7 @@
 package dev.bogdanjovanovic.api;
 
 import dev.bogdanjovanovic.fixtures.APITestFixtures;
-import dev.bogdanjovanovic.helpers.GoREST;
+import dev.bogdanjovanovic.services.GoREST;
 import org.junit.jupiter.api.Test;
 
 public class GoRESTAPITests extends APITestFixtures {

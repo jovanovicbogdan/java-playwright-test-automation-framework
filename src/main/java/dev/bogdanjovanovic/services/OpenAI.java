@@ -1,4 +1,4 @@
-package dev.bogdanjovanovic.helpers;
+package dev.bogdanjovanovic.services;
 
 import dev.bogdanjovanovic.contants.AppURLs;
 import dev.bogdanjovanovic.models.ChatCompletion;
